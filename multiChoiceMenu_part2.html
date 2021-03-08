@@ -1,0 +1,20 @@
+<!-- File 2 out of 2 -->
+<!-- name the file  'Page' when pasting this code since the part I uses it -->
+
+<div>
+    <? var data = valid(); ?>
+    <form id="form" name="form">
+    <? if(Object.prototype.toString.call(data) === '[object Array]') { ?>
+    <? for (var i = 0; i < data.length; i++) { ?>
+    <? for (var j = 0; j < data[i].length; j++) { ?>
+    <input type="checkbox" id="ch<?= '' + i + j ?>" name="ch<?= '' + i + j ?>" value="<?= data[i][j] ?>"><?= data[i][j] ?><br>
+    <? } ?>
+    <? } ?>
+    <? } else { ?>
+    <p>Your chosen cell doesn't have <a href="https://support.google.com/drive/answer/139705?hl=en">Data validation...</a></p>
+    <? } ?>
+    <input type="button" value="fill current" onclick="google.script.run.fillCell(this.parentNode)" />
+    <input type="button" value="get validation from current" onclick="google.script.run.showDialog()" />
+    </form>
+    </div>
+        
